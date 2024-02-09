@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  dashboard:
+    container_name: dashboard
+    restart: always
+    build: .
+    ports:
+      - "8501:8501"
+    networks:
+      - deploy_network
+
+networks:
+  deploy_network:
+    driver: bridge
